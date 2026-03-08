@@ -1,6 +1,5 @@
 # detection/progress_analyzer.py
 import cv2
-import numpy as np
 import config
 
 def analyze_progress(roi_img, progress_box):
