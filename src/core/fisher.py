@@ -7,7 +7,7 @@ import config
 import win32api
 import cv2
 import csv
-
+ 
 class FishingState:
     CAST = "CAST"                           # 抛竿
     WAIT_EXCLAMATION = "WAIT_EXCLAMATION"   # 等待感叹号
