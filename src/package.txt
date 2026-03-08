@@ -1,0 +1,11 @@
+pyinstaller -F -w src/main.py ^
+--add-data "src/models/best.pt;models" ^
+--add-data "src/assets/fonts/ShangShouYingFengShouXieTi-2.ttf;assets/fonts" ^
+--hidden-import ultralytics ^
+--hidden-import torch ^
+--hidden-import torchvision ^
+--hidden-import dxcam ^
+--hidden-import cv2 ^
+--collect-all ultralytics ^
+--collect-all torch ^
+--collect-all torchvision
