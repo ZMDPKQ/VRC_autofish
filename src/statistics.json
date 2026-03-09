@@ -1,0 +1,51 @@
+{
+  "successful_catches": 0,
+  "fail_catches": 0,
+  "total_run_time": 0.00,
+  "fish_Statistics": {
+    "黑色": {
+      "success": 0,
+      "fail": 0
+    },
+    "棕色": {
+      "success": 0,
+      "fail": 0
+    },
+    "白色": {
+      "success": 0,
+      "fail": 0
+    },
+    "绿色": {
+      "success": 0,
+      "fail": 0
+    },
+    "蓝色": {
+      "success": 0,
+      "fail": 0
+    },
+    "紫色": {
+      "success": 0,
+      "fail": 0
+    },
+    "红色": {
+      "success": 0,
+      "fail": 0
+    },
+    "金色": {
+      "success": 0,
+      "fail": 0
+    },
+    "粉色": {
+      "success": 0,
+      "fail": 0
+    },
+    "彩色": {
+      "success": 0,
+      "fail": 0
+    },
+    "未知": {
+      "success": 0,
+      "fail": 0
+    }
+  }
+}

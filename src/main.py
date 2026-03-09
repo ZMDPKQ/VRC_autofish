@@ -20,10 +20,10 @@ torch.backends.cudnn.benchmark = True
 # 检查模型文件
 if not os.path.exists(config.MODEL_PATH):
     print(f"错误：模型文件不存在 {config.MODEL_PATH}")
-    print("请将训练好的 best.pt 放入 models/ 文件夹")
     sys.exit(1)
 else:
-    print(f"模型文件已找到: {config.MODEL_PATH}")
+    # print(f"模型文件已找到: {config.MODEL_PATH}")
+    pass
 
 start_fishing_state = False
 pause_fishing_state = False
@@ -37,15 +37,9 @@ exit_event = threading.Event()
 
 
 # 初始化各模块
-print("初始化截图模块...")
 grabber = ScreenGrabber()  # 全屏截图
-
-print("初始化YOLO检测器...")
 detector = YOLODetector()
-
-print("初始化覆盖层...")
 overlay = Overlay()
-
 fisher = Fisher(roi=None,overlay=overlay)  # 如需要ROI，可先选择
 
 hm = HotkeyManager(start_key=config.HOTKEY_START, stop_key=config.HOTKEY_STOP,pause_key=config.HOTKEY_PAUSE)
@@ -61,7 +55,7 @@ def start_debug():
         pass
     debug_thread = threading.Thread(target=debug_loop)
     debug_thread.start()
-    print("调试窗口已打开")
+    # print("调试窗口已打开")
 
 def stop_debug():
     global exit_event
@@ -85,11 +79,11 @@ def stop_fishing():
 def start_fishing_state_change():
     global start_fishing_state
     if not start_fishing_state:
-        print("开始检测并自动钓鱼")
+        # print("开始检测并自动钓鱼")
         start_fishing_state = True
         start_fishing()
     else:
-        print("暂停中")
+        # print("暂停中")
         start_fishing_state = False
         stop_fishing()
         # edit_config()
@@ -99,11 +93,11 @@ def pause_fishing_state_change():
     global pause_fishing_state,fisher
     if pause_fishing_state:
         # 停止控制鼠标
-        print("停止控制鼠标")
+        # print("停止控制鼠标")
         pause_fishing_state = False
     else:
         # 控制鼠标
-        print("继续控制鼠标")
+        # print("继续控制鼠标")
         pause_fishing_state = True
     fisher.set_mouse_enable(pause_fishing_state)
 
@@ -205,13 +199,10 @@ if __name__ == "__main__":
             time.sleep(0.1)
         stop_event.set()
         if fisher_thread and fisher_thread.is_alive():
-            print("fisher_thread")
             fisher_thread.join(timeout=1)    # 等待最多1秒，避免卡死
         if debug_thread and debug_thread.is_alive():
-            print("debug_thread")
             debug_thread.join(timeout=1)      
         if overlay:
-            print("overlay")
             overlay.stop()
         hm.stop_listening()
         sys.exit(0)

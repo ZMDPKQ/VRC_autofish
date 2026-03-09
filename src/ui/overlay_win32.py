@@ -70,7 +70,7 @@ class Overlay:
 
         # 默认使用文件名作为字体名
         font_name = os.path.splitext(os.path.basename(font_path))[0]
-        print("字体加载成功:", font_name)
+        # print("字体加载成功:", font_name)
         return font_name
 
     # ===============================

@@ -1,24 +1,49 @@
 import dxcam
+import time
+
 
 class ScreenGrabber:
+
     def __init__(self, roi=None):
         self.roi = roi
-        self.camera = dxcam.create(output_color="BGR")
+        self.camera = None
+        self._create_camera()
+
+    def _create_camera(self):
+        try:
+            del self.camera
+            self.camera = dxcam.create(output_color="BGR")
+            # self.camera.start(target_fps=120, video_mode=True)
+            self.camera.start(target_fps=120)
+        except Exception as e:
+            print("DXCAM init error:", e)
+            self.camera = None
 
     def grab(self, roi=None):
+
         if roi is not None:
             self.roi = roi
+
         if self.camera is None:
-            self.camera = dxcam.create(output_color="BGR")
+            self._create_camera()
+            return None
+
         try:
-            frame = self.camera.grab()
-        except Exception:
-            # DX 状态异常时重建
+            frame = self.camera.get_latest_frame()
+
+        except Exception as e:
+            print("DXCAM crash, restarting:", e)
             try:
-                self.camera = dxcam.create(output_color="BGR")
-                frame = self.camera.grab()
+                self.camera.stop()
+                del self.camera
             except:
-                return None
+                pass
+
+            self.camera = None
+            time.sleep(0.001)
+            self._create_camera()
+
+            return None
 
         if frame is None:
             return None
@@ -27,13 +52,12 @@ class ScreenGrabber:
             return frame
 
         left, top, width, height = self.roi
-        return frame[top:top+height, left:left+width]
-    
+        return frame[top:top + height, left:left + width]
+
     def release(self):
         if self.camera is not None:
             try:
                 self.camera.stop()
-                del self.camera
             except:
                 pass
-            self.camera = None
+        self.camera = None

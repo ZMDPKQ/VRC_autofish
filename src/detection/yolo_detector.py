@@ -10,7 +10,8 @@ class YOLODetector:
                  conf_threshold=config.CONFIDENCE_THRESHOLD):
 
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        print(f"Using device: {self.device}")
+        # self.device = "cpu"
+        # print(f"Using device: {self.device}")
 
         self.base_model = YOLO(model_path)
         self.base_model.to(self.device)
@@ -66,3 +67,5 @@ class YOLODetector:
     
     def get_running_model_name(self):
         return self.using_model
+    def get_model_running_device(self):
+        return self.device
