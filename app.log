@@ -1,0 +1,1281 @@
+2026-03-11 04:31:03 [INFO] fisher: DXCAM frame count:0,MSS frame count:144,None frame count0
+2026-03-11 04:54:03 [INFO] fisher: DXCAM frame count:0,MSS frame count:1083,None frame count0
+2026-03-11 04:57:51 [INFO] fisher: DXCAM frame count:0,MSS frame count:3518,None frame count0
+2026-03-11 05:07:43 [INFO] fisher: DXCAM frame count:0,MSS frame count:4752,None frame count0
+2026-03-11 05:14:41 [INFO] fisher: DXCAM frame count:6984,MSS frame count:6984,None frame count0
+2026-03-11 05:15:53 [INFO] fisher: DXCAM frame count:9238,MSS frame count:9238,None frame count0
+2026-03-11 05:16:18 [INFO] fisher: DXCAM frame count:9602,MSS frame count:9602,None frame count0
+2026-03-11 08:37:04 [INFO] fisher: DXCAM frame count:2705,MSS frame count:2705,None frame count0
+2026-03-11 08:43:36 [INFO] fisher: DXCAM frame count:1882,MSS frame count:1882,None frame count0
+2026-03-11 08:43:53 [INFO] fisher: DXCAM frame count:2389,MSS frame count:2389,None frame count0
+2026-03-11 08:53:12 [INFO] fisher: DXCAM frame count:12159,MSS frame count:12159,None frame count0
+2026-03-11 09:13:55 [INFO] fisher: DXCAM frame count:2270,MSS frame count:2270,None frame count0
+2026-03-11 09:17:46 [INFO] fisher: DXCAM frame count:8272,MSS frame count:8272,None frame count0
+2026-03-11 09:24:31 [INFO] fisher: DXCAM frame count:3746,MSS frame count:3746,None frame count0
+2026-03-11 09:26:22 [INFO] fisher: DXCAM frame count:3040,MSS frame count:0,None frame count0
+2026-03-11 09:35:47 [INFO] fisher: json read success
+2026-03-11 09:35:55 [INFO] fisher: json read success
+2026-03-11 09:36:30 [INFO] fisher: json read success
+2026-03-11 09:36:33 [INFO] fisher: json read success
+2026-03-11 09:39:21 [INFO] fisher: json read success
+2026-03-11 09:39:24 [INFO] fisher: json read success
+2026-03-11 09:39:28 [INFO] fisher: json write success
+2026-03-11 09:39:28 [INFO] fisher: DXCAM frame count:97,MSS frame count:0,None frame count0
+2026-03-11 09:39:47 [INFO] fisher: json read success
+2026-03-11 09:39:51 [INFO] fisher: json read success
+2026-03-11 09:41:34 [INFO] fisher: json read success
+2026-03-11 09:41:38 [INFO] fisher: json read success
+2026-03-11 09:42:09 [INFO] fisher: json write success
+2026-03-11 09:42:09 [INFO] fisher: DXCAM frame count:1112,MSS frame count:0,None frame count0
+2026-03-11 09:43:21 [INFO] fisher: json read success
+2026-03-11 09:43:23 [INFO] fisher: json read success
+2026-03-11 09:43:34 [INFO] fisher: json write success
+2026-03-11 09:43:34 [INFO] fisher: DXCAM frame count:397,MSS frame count:0,None frame count0
+2026-03-11 09:43:45 [INFO] fisher: json read success
+2026-03-11 09:43:46 [INFO] fisher: json read success
+2026-03-11 09:43:53 [INFO] fisher: json write success
+2026-03-11 09:43:53 [INFO] fisher: DXCAM frame count:186,MSS frame count:0,None frame count0
+2026-03-11 09:44:17 [INFO] fisher: json read success
+2026-03-11 09:44:20 [INFO] fisher: json read success
+2026-03-11 09:46:22 [INFO] fisher: json read success
+2026-03-11 09:46:24 [INFO] fisher: json read success
+2026-03-11 09:46:42 [INFO] fisher: json write success
+2026-03-11 09:46:46 [INFO] fisher: json write success
+2026-03-11 09:46:46 [INFO] fisher: DXCAM frame count:619,MSS frame count:0,None frame count0
+2026-03-11 09:47:21 [INFO] fisher: json read success
+2026-03-11 09:47:27 [INFO] fisher: json read success
+2026-03-11 09:47:52 [INFO] fisher: json write success
+2026-03-11 09:47:52 [INFO] fisher: DXCAM frame count:726,MSS frame count:0,None frame count0
+2026-03-11 09:48:03 [INFO] fisher: json read success
+2026-03-11 09:48:09 [INFO] fisher: json read success
+2026-03-11 09:48:28 [INFO] fisher: json read success
+2026-03-11 09:48:30 [INFO] fisher: json read success
+2026-03-11 09:48:44 [INFO] fisher: json write success
+2026-03-11 09:48:44 [INFO] fisher: DXCAM frame count:595,MSS frame count:0,None frame count0
+2026-03-11 09:51:07 [INFO] fisher: json read success
+2026-03-11 09:51:08 [INFO] fisher: json read success
+2026-03-11 09:51:53 [INFO] fisher: on json write
+2026-03-11 09:51:53 [INFO] fisher: json write success
+2026-03-11 09:51:53 [INFO] fisher: DXCAM frame count:1713,MSS frame count:0,None frame count0
+2026-03-11 09:52:14 [INFO] fisher: json read success
+2026-03-11 09:52:18 [INFO] fisher: json read success
+2026-03-11 09:55:01 [INFO] fisher: json read success
+2026-03-11 09:55:04 [INFO] fisher: json read success
+2026-03-11 09:55:21 [INFO] fisher: on json write
+2026-03-11 09:55:21 [INFO] fisher: json write success
+2026-03-11 09:55:40 [INFO] fisher: on json write
+2026-03-11 09:55:40 [INFO] fisher: json write success
+2026-03-11 09:55:44 [INFO] fisher: on json write
+2026-03-11 09:55:44 [INFO] fisher: json write success
+2026-03-11 09:55:44 [INFO] fisher: DXCAM frame count:1453,MSS frame count:0,None frame count0
+2026-03-11 14:52:51 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 14:52:51 [ERROR] fisher: json read path is None:C:\Users\45587\Desktop\QwQ\statistics.json
+2026-03-11 14:53:17 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 14:53:18 [ERROR] fisher: json read path is None:C:\Users\45587\Desktop\QwQ\statistics.json
+2026-03-11 14:53:21 [ERROR] fisher: json read path is None:C:\Users\45587\Desktop\QwQ\statistics.json
+2026-03-11 14:54:58 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 14:54:58 [ERROR] fisher: json read path is None:C:\Users\45587\Desktop\QwQ\statistics.json
+2026-03-11 14:55:16 [ERROR] fisher: json read path is None:C:\Users\45587\Desktop\QwQ\statistics.json
+2026-03-11 14:55:26 [INFO] fisher: json write success
+2026-03-11 14:55:26 [INFO] fisher: DXCAM frame count:2895,MSS frame count:1,None frame count0
+2026-03-11 14:55:36 [INFO] fisher: json read success
+2026-03-11 14:55:39 [INFO] fisher: json write success
+2026-03-11 14:55:39 [INFO] fisher: DXCAM frame count:3509,MSS frame count:1,None frame count0
+2026-03-11 14:55:49 [INFO] fisher: json read success
+2026-03-11 14:55:50 [INFO] fisher: json write success
+2026-03-11 14:55:50 [INFO] fisher: DXCAM frame count:3770,MSS frame count:1,None frame count0
+2026-03-11 15:00:28 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 15:00:29 [INFO] fisher: json read success
+2026-03-11 15:00:34 [INFO] fisher: json read success
+2026-03-11 15:00:43 [INFO] fisher: json write success
+2026-03-11 15:00:43 [INFO] fisher: DXCAM frame count:276,MSS frame count:0,None frame count0
+2026-03-11 15:22:42 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 15:22:43 [INFO] fisher: json read success
+2026-03-11 15:23:02 [INFO] fisher: json read success
+2026-03-11 15:23:02 [INFO] fisher: fisher while isrunning
+2026-03-11 15:23:22 [INFO] fisher: json write success
+2026-03-11 15:23:42 [INFO] fisher: json write success
+2026-03-11 15:23:42 [INFO] fisher: json write success
+2026-03-11 15:23:42 [INFO] fisher: DXCAM frame count:1580,MSS frame count:0,None frame count0
+2026-03-11 15:23:45 [INFO] fisher: json read success
+2026-03-11 15:23:45 [INFO] fisher: fisher while isrunning
+2026-03-11 15:24:01 [INFO] fisher: json write success
+2026-03-11 15:24:02 [INFO] fisher: json write success
+2026-03-11 15:24:02 [INFO] fisher: DXCAM frame count:2388,MSS frame count:0,None frame count0
+2026-03-11 15:39:09 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 15:39:10 [INFO] fisher: json read success
+2026-03-11 15:39:11 [INFO] fisher: json read success
+2026-03-11 15:39:11 [INFO] fisher: fisher while isrunning
+2026-03-11 15:39:34 [INFO] fisher: json write success
+2026-03-11 15:39:34 [INFO] fisher: DXCAM frame count:1159,MSS frame count:0,None frame count0
+2026-03-11 15:45:01 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 15:45:02 [INFO] fisher: json read success
+2026-03-11 15:45:06 [INFO] fisher: json read success
+2026-03-11 15:45:06 [INFO] fisher: fisher while isrunning
+2026-03-11 15:45:06 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:08 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:08 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:08 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:09 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:09 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:09 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:09 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:09 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:09 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:09 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:10 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:10 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:10 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:10 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:10 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:10 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:10 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:11 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:11 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:11 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:11 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:11 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:11 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:11 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:12 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:12 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:12 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:12 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:12 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:12 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:12 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:13 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:13 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:13 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:13 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:13 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:13 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:14 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:14 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:14 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:14 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:14 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:14 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:14 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:15 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:15 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:15 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:15 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:15 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:15 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:16 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:16 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:16 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:16 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:16 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:16 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:16 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:17 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:17 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:17 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:17 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:17 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:17 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:18 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:18 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:18 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:18 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:18 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:18 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:18 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:19 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:19 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:19 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:19 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:19 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:19 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:19 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:20 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:20 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:20 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:20 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:20 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:20 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:21 [INFO] fisher: json write success
+2026-03-11 15:45:22 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:27 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:27 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:28 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:28 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:28 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:28 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:28 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:28 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:29 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:29 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:29 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:29 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:29 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:29 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:29 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:30 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:30 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:30 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:30 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:30 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:30 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:30 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:31 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:31 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:31 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:31 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:31 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:31 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:31 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:32 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:32 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:32 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:32 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:32 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:32 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:33 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:33 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:33 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:33 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:33 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:33 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:33 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:34 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:34 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:34 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:34 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:34 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:34 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:35 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:35 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:35 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:35 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:35 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:35 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:35 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:36 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:36 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:36 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:36 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:36 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:36 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:37 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:37 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:37 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:37 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:37 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:37 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:37 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:38 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:38 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:38 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:38 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:38 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:38 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:38 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:39 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:39 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:39 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:39 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:39 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:39 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:40 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:40 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:40 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:40 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:40 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:40 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:40 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:41 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:41 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:41 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:41 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:41 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:41 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:42 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:42 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:42 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:42 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:42 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:42 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:42 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:43 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:43 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:43 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:43 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:43 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:43 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:44 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:44 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:44 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:44 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:44 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:44 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:44 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:45 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:45 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:45 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:45 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:45 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:45 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:45 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:46 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:46 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:46 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:46 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:46 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:46 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:46 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:47 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:47 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:47 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:47 [INFO] fisher: json write success
+2026-03-11 15:45:47 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:47 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:47 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:48 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:48 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:48 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:48 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:49 [ERROR] fisher: Erroe on get frame: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "C:\Users\45587\Desktop\QwQ\src\core\fisher.py", line 245, in run
+    if frame % 5 == 0:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2026-03-11 15:45:49 [INFO] fisher: json write success
+2026-03-11 15:45:49 [INFO] fisher: DXCAM frame count:231,MSS frame count:0,None frame count0
+2026-03-11 15:46:42 [INFO] main: 模型文件已找到: C:\Users\45587\Desktop\QwQ\src\models\best.pt
+2026-03-11 15:46:42 [INFO] fisher: json read success
+2026-03-11 15:46:48 [INFO] fisher: json read success
+2026-03-11 15:46:48 [INFO] fisher: fisher while isrunning
+2026-03-11 15:47:01 [INFO] fisher: json write success
+2026-03-11 15:47:20 [INFO] fisher: json write success
+2026-03-11 15:47:20 [INFO] fisher: json write success
+2026-03-11 15:47:20 [INFO] fisher: DXCAM frame count:587,MSS frame count:168,None frame count0
