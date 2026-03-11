@@ -1,63 +1,65 @@
-import dxcam
-import time
+import mss
+import numpy as np
+import logging
+from typing import Optional, Tuple
 
+logger = logging.getLogger(__name__)
 
 class ScreenGrabber:
 
-    def __init__(self, roi=None):
+    def __init__(
+        self,
+        monitor: int = 1,
+        output_color: str = "BGR",
+    ):
+        self.monitor_idx = monitor
+        self.output_color = output_color.upper()
+        self.roi: Optional[Tuple[int, int, int, int]] = None
+
+        self.sct = mss.mss()
+        self.monitor_info = self.sct.monitors[self.monitor_idx]
+
+        self._grab_region = self.monitor_info
+
+    def set_roi(self, roi: Optional[Tuple[int, int, int, int]]):
+
         self.roi = roi
-        self.camera = None
-        self._create_camera()
 
-    def _create_camera(self):
+        if roi is None:
+            self._grab_region = self.monitor_info
+        else:
+            left, top, width, height = roi
+
+            self._grab_region = {
+                "left": self.monitor_info["left"] + left,
+                "top": self.monitor_info["top"] + top,
+                "width": width,
+                "height": height,
+            }
+
+    def grab(self):
         try:
-            del self.camera
-            self.camera = dxcam.create(output_color="BGR")
-            # self.camera.start(target_fps=120, video_mode=True)
-            self.camera.start(target_fps=120)
-        except Exception as e:
-            print("DXCAM init error:", e)
-            self.camera = None
+            sct_img = self.sct.grab(self._grab_region)
+            frame = np.frombuffer(
+                sct_img.raw,
+                dtype=np.uint8
+            ).reshape(sct_img.height, sct_img.width, 4)
 
-    def grab(self, roi=None):
+            if self.output_color == "BGRA":
+                return frame
 
-        if roi is not None:
-            self.roi = roi
+            elif self.output_color == "BGR":
+                return frame[:, :, :3]
 
-        if self.camera is None:
-            self._create_camera()
-            return None
+            elif self.output_color == "RGB":
+                return frame[:, :, [2, 1, 0]]
 
-        try:
-            frame = self.camera.get_latest_frame()
+            return frame[:, :, :3]
 
         except Exception as e:
-            print("DXCAM crash, restarting:", e)
-            try:
-                self.camera.stop()
-                del self.camera
-            except:
-                pass
-
-            self.camera = None
-            time.sleep(0.001)
-            self._create_camera()
-
+            logger.error(f"MSS grab failed: {e}", exc_info=True)
             return None
-
-        if frame is None:
-            return None
-
-        if self.roi is None:
-            return frame
-
-        left, top, width, height = self.roi
-        return frame[top:top + height, left:left + width]
 
     def release(self):
-        if self.camera is not None:
-            try:
-                self.camera.stop()
-            except:
-                pass
-        self.camera = None
+        if self.sct:
+            self.sct.close()

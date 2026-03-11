@@ -8,6 +8,7 @@ from core.fisher import Fisher
 import config
 import tkinter as tk
 import re
+import logging
 
 from utils.screenshot import ScreenGrabber
 from detection.yolo_detector import YOLODetector
@@ -17,12 +18,25 @@ import torch
 torch.backends.cudnn.benchmark = True
 
 
+# 配置根日志记录器
+logging.basicConfig(
+    level=logging.INFO,                # 全局日志级别（DEBUG, INFO, WARNING, ERROR, CRITICAL）
+    format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',  # 日志格式
+    datefmt='%Y-%m-%d %H:%M:%S',        # 时间格式
+    handlers=[
+        logging.StreamHandler(),         # 输出到控制台
+        logging.FileHandler('app.log') # 可选：输出到文件
+    ]
+)
+
+
+logger = logging.getLogger('main') 
 # 检查模型文件
 if not os.path.exists(config.MODEL_PATH):
-    print(f"错误：模型文件不存在 {config.MODEL_PATH}")
+    logger.error(f"错误：模型文件不存在 {config.MODEL_PATH}")
     sys.exit(1)
 else:
-    # print(f"模型文件已找到: {config.MODEL_PATH}")
+    logger.info(f"模型文件已找到: {config.MODEL_PATH}")
     pass
 
 start_fishing_state = False

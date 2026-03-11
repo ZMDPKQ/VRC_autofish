@@ -5,12 +5,19 @@ import numpy as np
 from utils.screenshot import ScreenGrabber
 from detection.yolo_detector import YOLODetector
 from core.mouse_controller import MouseController
+from core.keybaord_controller import KeyController
 import config
 import win32api
 import cv2
 import json
 import os
 from collections import Counter
+
+
+import dxcam
+import logging
+
+logger = logging.getLogger('fisher') 
 
 
 class FishingState:
@@ -43,10 +50,12 @@ class FishColor:
 class Fisher:
     def __init__(self, roi=None, overlay=None):
         self.init_time = time.time()
-        self.full_grabber = ScreenGrabber(roi)
         self.detector = YOLODetector()
         self.mouse = MouseController()
+        self.keyboard = KeyController()
         self.overlay = overlay
+        self.camera = None
+        self.grabber = None
         
         self.stop_event = None
 
@@ -59,11 +68,14 @@ class Fisher:
         self.total_runtime_this = None
         self.screen_width = win32api.GetSystemMetrics(0)
         self.screen_height = win32api.GetSystemMetrics(1)
+        self.last_farme_time = time.time()
+        self.mss_frame_count = 0
+        self.dxcam_frame_count = 0
+        self.none_frame = 0
         
 
         # 状态机
         self.state = None
-        self.change_state(FishingState.CAST,self.init_time)
         # self.state = FishingState.QWE
         
         self.wait_exclamation_count = config.MAX_WAIT_EXCLAMATION_COUNT
@@ -76,8 +88,14 @@ class Fisher:
         self.max_targetbar_fall_time = config.MAX_TARGETBAR_FALL_TIME
         self.max_mouse_hold_time = config.MAX_MOUSE_HOLD_TIME
         self.max_wait_exclamatione_time = config.MAX_WAIT_EXCLAMATIONE_TIME
-        self.forg_countdown = 1  # 收青蛙倒计时
-        self.sell_countdown = 1  # 卖鱼倒计时
+        self.forg_countdown = None  # 下次收青蛙时间
+        self.sell_countdown = None  # 
+        self.last_forg = 0
+        self.last_sell = 0
+        self.time_forg_harvest = config.TIME_FORG_HARVEST
+        self.time_sell_narvest = config.TIME_SELL_HARVEST
+        self.forg_flag = False
+        self.sell_flag = False
         
         self.mouse_hold_start_time = -1 # 鼠标开始长按的时间
         self.mouse_hold_remaining  = 0  # 鼠标还需要长按多少秒
@@ -145,6 +163,7 @@ class Fisher:
             }    # 钓鱼统计
         }
         self.load_statistics()
+        self.change_state(FishingState.CAST)
 
 
     def run(self, stop_event):
@@ -166,6 +185,10 @@ class Fisher:
         if self.total_runtime_this:
             self.accumulated_run_time += self.total_runtime_this
         self.total_runtime_this = self.accumulated_run_time
+        
+        # self.full_grabber = ScreenGrabber()
+        self.grabber = ScreenGrabber(monitor=1,output_color="BGR")
+        
 
         
         # 调试
@@ -180,7 +203,7 @@ class Fisher:
         self.min_switch_interval =config.FISH_PID_CONTROL_MIN_SWITCH_INTERVAL   # 最小切换间隔（秒）
 
 
-
+        logger.info('fisher while isrunning')
         while not stop_event.is_set():
             tmp_start_time = time.time()  
             lines = []
@@ -192,10 +215,49 @@ class Fisher:
             else:
                 self.mouse.enable(True)
 
-            t0 = time.time()
-            # print(self.current_roi)
             
-            frame = self.full_grabber.grab()
+            # print(self.current_roi)
+            if self.last_forg == 0:
+                self.forg_countdown = 0
+            if self.last_sell == 0:
+                self.sell_countdown = 0
+
+            if (self.forg_countdown <= tmp_start_time ) and self.state != FishingState.FORG:
+                self.forg_flag = True
+            else:
+                self.forg_flag = False
+            if (self.sell_countdown <= tmp_start_time ) and self.state != FishingState.SELL:
+                self.sell_flag = True    
+            else:
+                self.sell_flag - False                                             
+            self.screen_width = win32api.GetSystemMetrics(0)   
+            self.screen_height = win32api.GetSystemMetrics(1)
+
+
+            
+            t0 = time.time()
+            # frame = self.full_grabber.grab()
+
+            if self.camera is None:
+                self.camera = dxcam.create(output_color="BGR")
+            try:
+                frame = self.camera.grab(new_frame_only=False)
+            except Exception as e:
+                logger.error(f"Erroe on get frame: {e}",exc_info=True)
+                try:
+                    self.camera.release()
+                except Exception as ee:
+                    logger.error(f"Error on camera release:{ee}")
+                self.camera = None
+
+            if frame is None:
+                frame = self.grabber.grab()
+                if frame is not None:
+                    self.mss_frame_count += 1
+            else:
+                self.dxcam_frame_count+=1
+            
+            # frame = None
             t1 = time.time()
             if frame is None:
                 dets = {
@@ -210,7 +272,10 @@ class Fisher:
                 print(f"frame{frame_count} is None")
             else:
                 # dets = self.detector.detect(frame,self.current_roi)
-                dets = self.detector.detect(frame)
+                if self.state == FishingState.FISHING:
+                    dets = self.detector.detect(frame, classes=[1,2,3,4,5])
+                else:
+                    dets = self.detector.detect(frame)
             t2 = time.time()
             
             # print("detections:", dets)
@@ -242,8 +307,6 @@ class Fisher:
             lines.append(f"状态: {self.state}")
 
             
-            
-
             # 核心逻辑
             # =================状态机=================
             state_machine_start_time = time.time()
@@ -251,9 +314,9 @@ class Fisher:
                 if state_machine_start_time-self.finsh_catch_click_time>=self.recast_wait_time:
                     if self.recast_wait <= 0:
                         # lines.append(f"抛竿")
-                        self.mouse.click()
+                        self.mouse.click_left()
                         self.mouse.move_LR()
-                        self.change_state(FishingState.WAIT_EXCLAMATION,state_machine_start_time)
+                        self.change_state(FishingState.WAIT_EXCLAMATION)
                         self.fish_color = None
                         self.last_cast_time = state_machine_start_time
                         self.recast_wait = self.recast_wait_time
@@ -265,54 +328,55 @@ class Fisher:
                 lines.append(f"等待感叹号:{remaining_wait_exclamation_time:.2f}")
                 if exclamation:
                     # lines.append("出现感叹号！")
-                    if self.mouse.click():
-                        self.change_state(FishingState.WAIT_GAME_START,time.time())
+                    if self.mouse.click_left():
+                        self.change_state(FishingState.WAIT_GAME_START)
                         self.wait_exclamation_count = config.MAX_WAIT_EXCLAMATION_COUNT
                 elif remaining_wait_exclamation_time <= 0:
                     self.wait_exclamation_count -= 1
                     if self.wait_exclamation_count <= 0:
                         # lines.append("连续三次抛竿失败！")
-                        self.change_state(FishingState.CAST,state_machine_start_time)
+                        self.change_state(FishingState.CAST)
                         self.wait_exclamation_count = 3
                         # 连续三次失败的处理
                         pass
                     else:
                         # lines.append("等不及了！")
-                        if self.mouse.click():
-                            self.change_state(FishingState.WAIT_GAME_START,state_machine_start_time)
+                        if self.mouse.click_left():
+                            self.change_state(FishingState.WAIT_GAME_START)
                 if game_area:
-                    self.change_state(FishingState.FISHING,state_machine_start_time)
+                    self.change_state(FishingState.FISHING)
                     self.wait_exclamation_count = config.MAX_WAIT_EXCLAMATION_COUNT
 
             elif self.state == FishingState.WAIT_GAME_START:
                 if targetbar and fish:
                     # lines.append("出现啦！")
-                    self.change_state(FishingState.FISHING,state_machine_start_time)
+                    self.change_state(FishingState.FISHING)
                     self.wait_exclamation_count = 0
                 else:
                     if state_machine_start_time-self.state_start_time >= self.max_wait_game_appeara_time:
                         # lines.append("我的鱼呢？")
-                        self.change_state(FishingState.CAST,state_machine_start_time)
+                        self.change_state(FishingState.CAST)
                     
             elif self.state == FishingState.FISHING:
                 # ================== 动态调整ROI ==================
-                if game_area:
-                    game_area_box, _ = game_area
-                    gx1, gy1, gx2, gy2 = game_area_box
-                    add_per = 0.2 / 2
-                    margin_w = (gx2 - gx1) * add_per
-                    margin_h = (gy2 - gy1) * add_per
-                    left = int(max(0, gx1 - margin_w))
-                    top = int(max(0, gy1 - margin_h))
+                # if game_area:
+                #     game_area_box, _ = game_area
+                #     gx1, gy1, gx2, gy2 = game_area_box
+                #     add_per = 0.2 / 2
+                #     margin_w = (gx2 - gx1) * add_per
+                #     margin_h = (gy2 - gy1) * add_per
+                #     left = int(max(0, gx1 - margin_w))
+                #     top = int(max(0, gy1 - margin_h))
                     
-                    right = int(min(gx2 + margin_w, self.screen_width))
-                    bottom = int(min(gy2 + margin_h, self.screen_height))
-                    width = right - left
-                    height = bottom - top
-                    self.current_roi = (left, top, width, height)
+                #     right = int(min(gx2 + margin_w, self.screen_width))
+                #     bottom = int(min(gy2 + margin_h, self.screen_height))
+                #     width = right - left
+                #     height = bottom - top
+                #     self.current_roi = (left, top, width, height)
                 
-                if fish:
-                    self.update_fish_color(frame,fish[0])
+                if fish and state_machine_start_time - self.state_start_time >= 0.88:
+                    if self.fish_color is None or self.fish_color == FishColor.UNKNOWN:
+                        self.update_fish_color(frame,fish[0])
                     lines.append(f"这条鱼的颜色是：{self.fish_color}")
                 # ================== 进度条显示（保留） ==================
                 if progressbar and progressbar_indicator:
@@ -338,7 +402,7 @@ class Fisher:
                             self.fish_finish_wait_time = temp_time_1
                         if temp_time_1 - self.fish_finish_wait_time >= self.max_fish_finish_wait_time:
                             self.fish_is_success = (self.fish_progress >= 0.8)
-                            self.change_state(FishingState.FINISH,temp_time_1)
+                            self.change_state(FishingState.FINISH)
                             self.fish_finish_wait_time = -1
                             self.current_roi = None
                             # print(f"钓鱼结束：{self.fish_is_success}")
@@ -490,20 +554,21 @@ class Fisher:
                 finish_time = state_machine_start_time
                 finish_click_is_success = False
                 if self.fish_is_success:
-                    if  self.mouse.click():
+                    if  self.mouse.click_left():
                         finish_time_success = time.time()
                         self.finsh_catch_click_time = finish_time_success
                         self.last_fish_success_time = finish_time_success
-                        self.change_state(FishingState.CAST,finish_time_success)
+                        self.change_state(FishingState.CAST)
                         self.fish_success_count += 1
                         finish_click_is_success = True
                         self.statistics['fish_Statistics'][self.fish_color]['success'] += 1
                 else:
-                    self.change_state(FishingState.CAST,finish_time)
+                    self.change_state(FishingState.CAST)
                     self.fish_fail_count += 1
                     finish_click_is_success = True
                     self.statistics['fish_Statistics'][self.fish_color]['fail'] += 1
-                if finish_click_is_success:    
+                if finish_click_is_success: 
+                    self.save_statistics(self.statistics)   
                     if self.mouse_move_onfinish_list:
                         # self.mouse.move_by_list(self.mouse_move_onfinish_list)
                         # self.mouse_move_onfinish_list = []
@@ -512,16 +577,38 @@ class Fisher:
                     pass
 
             elif self.state == FishingState.FORG:
-                self.state = FishingState.CAST
-            elif self.state == FishingState.SELL:
-                self.state = FishingState.CAST
+                
+                self.mouse.click_right()
+                time.sleep(0.2)
+                dy = int(350*1440/self.screen_height)
+                ditou = [(0,dy)]
+                self.mouse.move_by_list(ditou)
+                time.sleep(1)
+                self.keyboard.perss_key('p')
+                time.sleep(0.2)
+                self.mouse.click_left()
+                time.sleep(0.2)
+                ditou = [(0,-dy)]
+                self.mouse.move_by_list(ditou)
+                self.keyboard.perss_key('t')
+                time.sleep(1)
+                self.mouse.click_left()
+                self.change_state(FishingState.CAST)
+                self.last_forg = time.time()
+                self.forg_flag = True
+                self.forg_countdown = time.time() + self.time_forg_harvest * 3600
+                time.sleep(1.5)
             
+            elif self.state == FishingState.SELL:
+                self.change_state(FishingState.CAST)
             
             elif self.state == FishingState.ERROR:
-                self.change_state(FishingState.CAST,state_machine_start_time)
+                self.change_state(FishingState.CAST)
                 print("State ERROR")
 
-
+            # tmp_frame_time = time.time()
+            # if frame is not None and (tmp_frame_time - tmp_start_time <0.00833):
+            #     time.sleep(tmp_frame_time - tmp_start_time)
             tmp_end_time = time.time()
             # 统计数据
             frame_count += 1
@@ -545,11 +632,11 @@ class Fisher:
             fps_grab = 1.0 / self.grab_time if self.grab_time > 0 else 0
             fps_dete = 1.0 / self.dete_time if self.dete_time > 0 else 0
             fps_run  = 1.0 / self.run_time  if self.run_time  > 0 else 0
-      
+
             ttt =  tmp_end_time - self._run_start_time 
             self.total_runtime_this = ttt
-            # lines.append(f"截图平均帧: {fps_grab:.2f}")
-            # lines.append(f"检测平均帧: {fps_dete:.2f}")
+            lines.append(f"截图平均帧: {fps_grab:.2f}")
+            lines.append(f"检测平均帧: {fps_dete:.2f}")
             lines.append(f"脚本帧数: {fps_run:.2f}, {self.detector.get_model_running_device()}模式")
             lines.append(f"运行时间: {self.format_time(ttt+self.accumulated_run_time)}")
             lines.append(f"距离上次成功钓鱼:{self.format_time(tmp_end_time - self.last_fish_success_time if self.last_fish_success_time>0 else 0)}")  
@@ -565,14 +652,16 @@ class Fisher:
             lines.append(f"{FishColor.MAGENTA}: 成功:{self.statistics['fish_Statistics'][FishColor.MAGENTA]['success']}, 失败:{self.statistics['fish_Statistics'][FishColor.MAGENTA]['fail']}")
             lines.append(f"{FishColor.COLOURS}: 成功:{self.statistics['fish_Statistics'][FishColor.COLOURS]['success']}, 失败:{self.statistics['fish_Statistics'][FishColor.COLOURS]['fail']}")
             lines.append(f"{FishColor.UNKNOWN}: 成功:{self.statistics['fish_Statistics'][FishColor.UNKNOWN]['success']}, 失败:{self.statistics['fish_Statistics'][FishColor.UNKNOWN]['fail']}")
-            lines.append(f"累计: 成功:{self.fish_success_count} 失败:{self.fish_fail_count} ")
+            lines.append(f"累计: 成功:{self.fish_success_count}, 失败:{self.fish_fail_count} ")
             # print(ttt,self.accumulated_run_time)
             self.overlay.update(lines)
+            
         
         self.statistics['total_run_time'] = self.accumulated_run_time + self.total_runtime_this
         self.statistics['successful_catches'] = self.fish_success_count
         self.statistics['fail_catches'] = self.fish_fail_count
         self.save_statistics(self.statistics)
+        logger.info(f"DXCAM frame count:{self.dxcam_frame_count},MSS frame count:{self.mss_frame_count},None frame count{self.none_frame}")
 
     def update_fish_color(self, roi, box):
         """
@@ -583,17 +672,10 @@ class Fisher:
         """
         # 颜色已确定则直接返回
         if self.fish_color:
-            return
+            if self.fish_color != FishColor.UNKNOWN:
+                return
 
         now = time.time()
-
-        # 如果 roi 为 None，尝试截屏
-        if roi is None:
-            if hasattr(self, '_capture_screen'):
-                roi = self._capture_screen()  # 需自行实现，返回BGR numpy数组
-            else:
-                # print("警告：roi 为 None 且未定义 _capture_screen 方法，无法获取图像")
-                return
 
         # 确保 roi 是有效的 numpy 图像数组
         if not isinstance(roi, np.ndarray) or roi.size == 0:
@@ -601,7 +683,7 @@ class Fisher:
             return
 
         # 采样条件：未满5个，且距离上次采样至少0.555秒
-        if len(self.frame_fish_color) < 30 and (now - self.last_color_time) >= 0.0543:
+        if len(self.frame_fish_color) < 30 and (now - self.last_color_time) >= 0.04:
             hsv = self._extract_fish_hsv(roi, box)
             if hsv is not None:
                 color = self._hsv_to_color(hsv)
@@ -609,6 +691,8 @@ class Fisher:
                 if color != FishColor.UNKNOWN:
                     self.frame_fish_color.append(color)
             self.last_color_time = now  # 无论提取成功与否，都更新采样时间
+        elif len(self.frame_fish_color) >= 30 and self.fish_color == FishColor.UNKNOWN:
+            self.frame_fish_color = []
 
         # 如果样本数达到5，进行一致性判断
         if len(self.frame_fish_color) == 30:
@@ -702,39 +786,43 @@ class Fisher:
         # print(h,s,v)
 
         # 黑色     
-        if 80<h<120 and 70<s<100 and 70<v<100:
+        if 60<s<=100 and 70<v<=105 or\
+            40<s<60 and 80<v<100:
             return FishColor.BLACK
 
         # 白色
-        if (110<h<140 and 70<s<90 and 90<v<110) or (0<h<20 and 65<s<85 and 145<v<165):
+        if 55<s<=110 and 90<v:
             return FishColor.WHITE
         
-        # 红色
-        if h<10 or h>175:
-            return FishColor.RED
-
         # 棕色
-        if 0<h<20 and 120<s<140 and 100<v<120:
+        if 0<h<=20 and 110<s<=160 and 100<v<=130:
             return FishColor.BROWN
             
-        # 金色偏黄
-        if 22 < h <= 32:
-            return FishColor.GOLDEN
-
         # 绿色
-        if 40<h<60:
+        if 40<h<=70:
             return FishColor.GREEN
 
         # 蓝色
-        if 105<h<125:
+        if 105<h<=125:
             return FishColor.BLUE
 
         # 紫色
-        if 130<h<150:
+        if 130<h<=170 and 150<s<180 and 125<v<155 or\
+            130<h<160 and 105<s<145 and 120<v<160 or\
+            120<h<145 and 170<s<200 and 130<v<160:
             return FishColor.PURPLE
+        
+        # 金色
+        if 10 < h <= 30 or \
+            10<h<40 and 105<s<135 and 130<v:
+            return FishColor.GOLDEN
+
+        # 红色
+        if h<=10 or h>175:
+            return FishColor.RED
 
         # 品红
-        if 160 < h <= 170:
+        if 160 < h <= 170 or (110<h<160 and 120<s<170 and 110<v<160):
             return FishColor.MAGENTA
 
         return FishColor.UNKNOWN
@@ -744,42 +832,44 @@ class Fisher:
         h, m = divmod(m, 60)
         return f"{h:02d}:{m:02d}:{s:02d}"
 
-    def change_state(self, new_state,_time=None):
+    def change_state(self, new_state):
         # if self.forg_countdown:
-        if self.state == FishingState.FINISH and new_state == FishingState.CAST and self.forg_countdown <= 0:
+        if self.forg_flag and self.state == FishingState.FINISH and new_state == FishingState.CAST:
             self.state = FishingState.FORG
-        elif self.state == FishingState.FINISH and new_state == FishingState.CAST and self.sell_countdown <= 0:
+            self.forg_flag = False
+        elif self.sell_flag and self.state == FishingState.FINISH and new_state == FishingState.CAST:
             self.state = FishingState.SELL
+            self.sell_flag = False
         else:
             self.state = new_state
-        if _time:
-            self.state_start_time = _time
-        else:
             self.state_start_time = time.time()
 
     def stop(self):
         self.mouse.release()
-        self.full_grabber.release()
+        # self.full_grabber.release()
+        # del self.full_grabber
     
     def set_mouse_enable(self,is_enbale):
         self.set_mouse_enable = is_enbale
 
     def set_mouse_move(self,move_list=None):
         self.mouse_move_list  = move_list
+        
 
-    def save_statistics(self,statistics, path="./src/statistics.json"):
-        print(1)
+    def save_statistics(self,statistics, path=config.STATISTICS_PATH):
+        global logger
+        # logger.info('on json write')
         with open(path, "w", encoding="utf-8") as f:
-            print(2)
             json.dump(statistics, f, ensure_ascii=False, indent=2)
-            print('json write success')
+            
+            logger.info('json write success')
 
-    def load_statistics(self,path="./src/statistics.json"):
+    def load_statistics(self,path=config.STATISTICS_PATH):
         if not os.path.exists(path):
+            logger.error(f"json read path is None:{path}")
             return None
-
         with open(path, "r", encoding="utf-8") as f:
-            print('json open success')
             self.statistics = json.load(f)
+            logger.info('json read success')
 
 

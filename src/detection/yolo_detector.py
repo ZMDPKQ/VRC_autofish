@@ -1,7 +1,9 @@
 from ultralytics import YOLO
 import torch
 import config
+import logging
 
+logger = logging.getLogger('yolo_detector') 
 
 class YOLODetector:
     def __init__(self,
@@ -11,7 +13,7 @@ class YOLODetector:
 
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         # self.device = "cpu"
-        # print(f"Using device: {self.device}")
+        # logger.info(f"Using device: {self.device}")
 
         self.base_model = YOLO(model_path)
         self.base_model.to(self.device)
@@ -25,7 +27,7 @@ class YOLODetector:
         self.use_half = (self.device == "cuda")
         self.using_model = None
 
-    def detect(self, frame, roi=None):
+    def detect(self, frame, roi=None,classes=None):
 
         # 如果传入 ROI，说明在局部模式
         if roi is not None:
@@ -42,7 +44,8 @@ class YOLODetector:
             conf=self.conf_threshold,
             verbose=False,
             imgsz=imgsz,
-            half=self.use_half
+            half=self.use_half,
+            classes=classes
         )
 
         return self._parse_results(results)
