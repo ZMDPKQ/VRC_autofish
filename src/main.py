@@ -1,4 +1,5 @@
 # main.py
+from logging.handlers import RotatingFileHandler
 import threading
 import time
 import sys
@@ -7,7 +8,6 @@ from utils.hotkey import HotkeyManager
 from core.fisher import Fisher
 import config
 import tkinter as tk
-import re
 import logging
 
 from utils.screenshot import ScreenGrabber
@@ -18,19 +18,34 @@ import torch
 torch.backends.cudnn.benchmark = True
 
 
+# print("Start module load:", time.time())
+
 # 配置根日志记录器
 logging.basicConfig(
-    level=logging.INFO,                # 全局日志级别（DEBUG, INFO, WARNING, ERROR, CRITICAL）
+    level=logging.DEBUG,                # 全局日志级别（DEBUG, INFO, WARNING, ERROR, CRITICAL）
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',  # 日志格式
     datefmt='%Y-%m-%d %H:%M:%S',        # 时间格式
     handlers=[
-        logging.StreamHandler(),         # 输出到控制台
-        logging.FileHandler('app.log') # 可选：输出到文件
-    ]
+        # logging.StreamHandler(),         # 输出到控制台
+        # logging.FileHandler('QwQ.log') # 可选：输出到文件
+        RotatingFileHandler('QwQ.log', maxBytes=1024*1024*20, backupCount=3)
+    ],
+    encoding='utf-8'
 )
 
 
 logger = logging.getLogger('main') 
+
+def handle_exception(exc_type, exc_value, exc_traceback):
+    logger.error(
+        "Uncaught exception",
+        exc_info=(exc_type, exc_value, exc_traceback)
+    )
+
+sys.excepthook = handle_exception
+
+
+# print("# 检查模型文件前:", time.time())
 # 检查模型文件
 if not os.path.exists(config.MODEL_PATH):
     logger.error(f"错误：模型文件不存在 {config.MODEL_PATH}")
@@ -52,13 +67,19 @@ exit_event = threading.Event()
 
 # 初始化各模块
 grabber = ScreenGrabber()  # 全屏截图
+# print("After ScreenGrabber:", time.time())
 detector = YOLODetector()
+# print("After YOLODetector:", time.time())
 overlay = Overlay()
-fisher = Fisher(roi=None,overlay=overlay)  # 如需要ROI，可先选择
+# print("After Overlay:", time.time())
+fisher = Fisher(overlay=overlay)  # 如需要ROI，可先选择
+# print("After Fisher:", time.time())
 
 hm = HotkeyManager(start_key=config.HOTKEY_START, stop_key=config.HOTKEY_STOP,pause_key=config.HOTKEY_PAUSE)
+# print("After HotkeyManager:", time.time())
 
 def debug_loop():
+    global  exit_event
     overlay.start()
 
 
@@ -75,29 +96,45 @@ def stop_debug():
     global exit_event
     exit_event.set()
 
+def fisher_thread_entry():
+    global stop_event
+    logger.info("fisher_thread_entry() called, starting Fisher.run() in worker thread")
+    try:
+        fisher.run(stop_event)
+        logger.info("fisher_thread_entry() Fisher.run() returned normally")
+    except Exception as e:
+        logger.error(f"fisher_thread_entry() Fisher.run() raised exception: {e}", exc_info=True)
+    
 def start_fishing():
     global fisher_thread, stop_event,fisher
+    logger.info("start_fishing() called (request to start fishing loop)")
     if fisher_thread and fisher_thread.is_alive():
+        logger.info("start_fishing(): existing fisher_thread is alive, requesting stop and join")
         stop_event.set()
-        fisher_thread.join()
+        fisher_thread.join(timeout=1)
     stop_event.clear()
-    # 创建Fisher实例（可根据config.USE_ROI决定是否传入roi）
-    fisher_thread = threading.Thread(target=fisher.run, args=(stop_event,))
+    logger.info("start_fishing(): creating new fisher_thread")
+    fisher_thread = threading.Thread(target=fisher_thread_entry)
     fisher_thread.start()
+    logger.info("start_fishing(): fisher_thread started")
 
 def stop_fishing():
     global fisher
+    logger.info("stop_fishing() called, signalling stop_event and calling fisher.stop()")
     stop_event.set()
-    fisher.stop()
+    try:
+        fisher.stop()
+    except Exception as e:
+        logger.error(f"stop_fishing(): fisher.stop() raised exception: {e}", exc_info=True)
 
 def start_fishing_state_change():
     global start_fishing_state
     if not start_fishing_state:
-        # print("开始检测并自动钓鱼")
+        logger.info("start_fishing_state_change(): switching to START state, will call start_fishing()")
         start_fishing_state = True
         start_fishing()
     else:
-        # print("暂停中")
+        logger.info("start_fishing_state_change(): switching to STOP state, will call stop_fishing()")
         start_fishing_state = False
         stop_fishing()
         # edit_config()
@@ -201,12 +238,16 @@ def timing_start():
 
 
 if __name__ == "__main__":
+    t0 = time.time()
+    # print(f"1:{t0:.2f}s")
     start_debug()
+    # print(f"2:{time.time()-t0:.2f}s")
     # 如果需要ROI，可在此调用选择函数（略）
     hm.on_start = start_fishing_state_change
     # hm.on_pause = pause_fishing_state_change
     hm.on_stop = stop_debug
     hm.start_listening()
+    # print(f"3:{time.time()-t0:.2f}s")
     try:
         # 保持主线程运行
         while not exit_event.is_set():
@@ -222,5 +263,5 @@ if __name__ == "__main__":
         sys.exit(0)
     except KeyboardInterrupt:
         stop_debug()
-        print("退出")
+        # print("退出")
         sys.exit(0)

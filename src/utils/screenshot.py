@@ -1,7 +1,10 @@
 import mss
 import numpy as np
 import logging
+import time
 from typing import Optional, Tuple
+
+import cv2
 
 logger = logging.getLogger(__name__)
 
@@ -38,12 +41,17 @@ class ScreenGrabber:
             }
 
     def grab(self):
+        # logger.debug(self.roi)
         try:
             sct_img = self.sct.grab(self._grab_region)
             frame = np.frombuffer(
                 sct_img.raw,
                 dtype=np.uint8
             ).reshape(sct_img.height, sct_img.width, 4)
+            # # 调试：用已解析好的 numpy 保存一次截图（避免 mss raw 的 stride 导致条纹/重复）
+            # if not getattr(self, "_debug_saved", False):
+            #     cv2.imwrite(str(time.time()) + ".png", frame)
+            #     self._debug_saved = True
 
             if self.output_color == "BGRA":
                 return frame

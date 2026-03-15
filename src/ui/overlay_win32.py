@@ -29,7 +29,7 @@ class Overlay:
 
     def start(self):
         self.running = True
-        threading.Thread(target=self._run, daemon=True).start()
+        threading.Thread(target=self._run,daemon=True).start()
 
     def stop(self):
         self.running = False
@@ -160,7 +160,7 @@ class Overlay:
             # ===== 创建内存 DC（双缓冲）=====
             memdc = win32gui.CreateCompatibleDC(hdc)
             bmp = win32gui.CreateCompatibleBitmap(hdc, width, height)
-            win32gui.SelectObject(memdc, bmp)
+            old_bmp = win32gui.SelectObject(memdc, bmp)
 
             # 填充黑色背景（透明）
             brush = win32gui.GetStockObject(win32con.BLACK_BRUSH)
@@ -201,6 +201,7 @@ class Overlay:
                 win32con.SRCCOPY
             )
 
+            win32gui.SelectObject(memdc, old_bmp)
             win32gui.DeleteObject(bmp)
             win32gui.DeleteDC(memdc)
 

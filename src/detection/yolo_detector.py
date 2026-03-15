@@ -3,7 +3,7 @@ import torch
 import config
 import logging
 
-logger = logging.getLogger('yolo_detector') 
+logger = logging.getLogger(__name__) 
 
 class YOLODetector:
     def __init__(self,
@@ -11,9 +11,9 @@ class YOLODetector:
                  roi_model_path=config.ROI_MODEL_PATH,
                  conf_threshold=config.CONFIDENCE_THRESHOLD):
 
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        # self.device = "cpu"
-        # logger.info(f"Using device: {self.device}")
+        # self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.device = "cpu"
+        # logger.info(f"yolo 运行在: {self.device}")
 
         self.base_model = YOLO(model_path)
         self.base_model.to(self.device)
@@ -32,7 +32,7 @@ class YOLODetector:
         # 如果传入 ROI，说明在局部模式
         if roi is not None:
             model = self.roi_model
-            imgsz = 320
+            imgsz = 640
             self.using_model = 'roi_model'
         else:
             model = self.base_model
@@ -65,7 +65,7 @@ class YOLODetector:
 
         for name in detections:
             detections[name].sort(key=lambda x: x[1], reverse=True)
-
+        # logger.debug(f'detections:{detections}')
         return detections
     
     def get_running_model_name(self):

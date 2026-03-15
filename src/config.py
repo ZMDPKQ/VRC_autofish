@@ -10,7 +10,7 @@ def resource_path(relative_path):
 # 路径配置
 BASE_DIR = os.path.dirname(__file__)
 MODEL_PATH = resource_path(os.path.join(BASE_DIR, 'models', 'best.pt'))
-ROI_MODEL_PATH = resource_path(os.path.join(BASE_DIR,'models', 'ROI.pt'))
+ROI_MODEL_PATH = resource_path(os.path.join(BASE_DIR,'models', 'roi_fish.pt'))
 STATISTICS_PATH = resource_path("statistics.json")
 
 # 检测阈值
@@ -38,7 +38,7 @@ USE_ROI = False               # 是否使用手动ROI
 
 # 类别ID（与训练时一致）
 CLASS_NAMES = ["exclamation", "totalbar", "targetbar", "fish",
-               "progressbar", "progressbar_indicator", "game_area"]
+               "progressbar", "progressbar_indicator", "game_area","forg"]
 
 # 字体
 FONTPATH = 'src\\assets\\fonts\\ShangShouYingFengShouXieTi-2.ttf'

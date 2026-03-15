@@ -11,13 +11,14 @@ import win32api
 import cv2
 import json
 import os
+import re
 from collections import Counter
 
 
 import dxcam
 import logging
 
-logger = logging.getLogger('fisher') 
+logger = logging.getLogger(__name__) 
 
 
 class FishingState:
@@ -46,9 +47,13 @@ class FishColor:
     COLOURS = "彩色"
     UNKNOWN = "未知"
 
+class Camera:
+    DXCAM = "DXCAM"
+    MSS = "MSS"
+
 
 class Fisher:
-    def __init__(self, roi=None, overlay=None):
+    def __init__(self, overlay=None):
         self.init_time = time.time()
         self.detector = YOLODetector()
         self.mouse = MouseController()
@@ -56,11 +61,14 @@ class Fisher:
         self.overlay = overlay
         self.camera = None
         self.grabber = None
-        
+        self._dxcam_permanently_failed = False  # 一旦 DXCAM 不可用则本会话不再尝试
+
         self.stop_event = None
 
         # 预留ROI game_area
         self.current_roi = None  # (x, y, w, h)
+        self.roi_change_time = 0
+        self.current_classes = None
 
         self.is_pause = False
         self.accumulated_run_time = 0.0      # 累计运行时间（秒）
@@ -71,6 +79,8 @@ class Fisher:
         self.last_farme_time = time.time()
         self.mss_frame_count = 0
         self.dxcam_frame_count = 0
+        self.mss_none_frame_count = 0
+        self.dxcam_none_frame_count = 0
         self.none_frame = 0
         
 
@@ -168,6 +178,7 @@ class Fisher:
 
     def run(self, stop_event):
         self.stop_event = stop_event
+        logger.info("Fisher.run() called, preparing to start main loop")
         frame_count = 0
         t11 = 0
         t22 = 0
@@ -178,7 +189,11 @@ class Fisher:
         self.run_start_time = t_star
         self._run_start_time = time.time()
 
+        logger.info("Fisher.run() loading statistics from json")
         self.load_statistics()
+        logger.info(f"Fisher.run() statistics loaded: total_run_time={self.statistics.get('total_run_time')}, "
+                    f"successful_catches={self.statistics.get('successful_catches')}, "
+                    f"fail_catches={self.statistics.get('fail_catches')}")
         self.accumulated_run_time = float(self.statistics['total_run_time'])
         self.fish_success_count = int(self.statistics['successful_catches'])
         self.fish_fail_count = int(self.statistics['fail_catches'])
@@ -187,8 +202,25 @@ class Fisher:
         self.total_runtime_this = self.accumulated_run_time
         
         # self.full_grabber = ScreenGrabber()
-        self.grabber = ScreenGrabber(monitor=1,output_color="BGR")
-        
+        logger.info("实例化摄像头(DXCAM / MSS)")
+        # self.using_camera = Camera.DXCAM
+        self.using_camera = Camera.MSS
+        try:
+            self.grabber = ScreenGrabber(monitor=1,output_color="BGR")
+            logger.info("mss实例成功")
+        except Exception as e:
+            logger.error(f"mss实例失败: {e}", exc_info=True)
+        device_idx,output_idx = self.detect_active_dxcam_device()
+        logger.info(f"dxcam设备输出检测结果: device_idx={device_idx}, output_idx={output_idx}")
+        try:
+            self.camera = dxcam.create(device_idx=device_idx,output_idx=output_idx,output_color='BGR')
+            logger.info("dxcam实例成功")
+        except Exception as e:
+            logger.error(f"dxcam实例失败: {e}", exc_info=True)
+            self.camera = None
+            self._dxcam_permanently_failed = True
+            self.using_camera = Camera.MSS
+            logger.warning("DXCAM 在此设备上不可用，本会话将全程使用 MSS 截图")
 
         
         # 调试
@@ -203,7 +235,7 @@ class Fisher:
         self.min_switch_interval =config.FISH_PID_CONTROL_MIN_SWITCH_INTERVAL   # 最小切换间隔（秒）
 
 
-        logger.info('fisher while isrunning')
+        logger.info('开始执行主循环')
         while not stop_event.is_set():
             tmp_start_time = time.time()  
             lines = []
@@ -236,26 +268,53 @@ class Fisher:
 
             
             t0 = time.time()
-            # frame = self.full_grabber.grab()
-
-            if self.camera is None:
-                self.camera = dxcam.create(output_color="BGR")
-            try:
-                frame = self.camera.grab(new_frame_only=False)
-            except Exception as e:
-                logger.error(f"Erroe on get frame: {e}",exc_info=True)
-                try:
-                    self.camera.release()
-                except Exception as ee:
-                    logger.error(f"Error on camera release:{ee}")
-                self.camera = None
-
-            if frame is None:
-                frame = self.grabber.grab()
-                if frame is not None:
-                    self.mss_frame_count += 1
-            else:
-                self.dxcam_frame_count+=1
+            frame = None
+            # if self.using_camera == Camera.DXCAM:
+            #     try:
+            #         if self.camera is None:
+            #             self.camera = dxcam.create(device_idx=device_idx,output_idx=output_idx,output_color='BGR')
+            #         frame = self.camera.grab(new_frame_only=False)
+            #     except Exception as e:
+            #         logger.error(f"dxcam截屏失败: {e}", exc_info=True)
+            #         if self.camera is not None:
+            #             try:
+            #                 self.camera.release()
+            #             except Exception as ee:
+            #                 logger.error(f"Error on camera release: {ee}")
+            #         self.camera = None
+            #         # 设备不支持或内存不足时不再重试 DXCAM，避免每帧都报错/占内存
+            #         err_code = getattr(e, 'args', [None])[0] if getattr(e, 'args', None) else None
+            #         if err_code in (-2005270524, -2147024882):
+            #             self._dxcam_permanently_failed = True
+            #             self.using_camera = Camera.MSS
+            #             logger.warning("DXCAM 不可用或内存不足，已切换为 MSS 并本会话不再尝试 DXCAM")
+            #         if frame is None:
+            #             self.dxcam_none_frame_count += 1
+            #         else:
+            #             self.dxcam_frame_count += 1
+            #         if (self.dxcam_frame_count + self.dxcam_none_frame_count) > 40 and self.dxcam_none_frame_count / (self.dxcam_frame_count + self.dxcam_none_frame_count) >= 1/4:
+            #             self._dxcam_permanently_failed = True
+            #             self.using_camera = Camera.MSS
+            #             self.dxcam_frame_count = 0
+            #             self.dxcam_none_frame_count = 0
+            # if self.using_camera == Camera.MSS:
+            #     try:
+            #         frame = self.grabber.grab()
+            #     except Exception as e:
+            #         logger.error(f"Error on grabber.grab():{e}")
+            #     if frame is not None:
+            #         self.mss_frame_count += 1
+            #     else:
+            #         self.mss_none_frame_count += 1
+            #     if not self._dxcam_permanently_failed and (self.mss_frame_count + self.mss_none_frame_count > 40) and self.mss_frame_count / (self.mss_frame_count + self.mss_none_frame_count) >= 1/4:
+            #         self.using_camera = Camera.DXCAM
+            #         self.mss_none_frame_count = 0
+            #         self.mss_frame_count = 0
+            #         # 尝试重启
+            #         logger.info('两个摄像头都有问题，尝试重启')
+            #         self.restart()
+            frame = self.grabber.grab()
+            
             
             # frame = None
             t1 = time.time()
@@ -273,7 +332,7 @@ class Fisher:
             else:
                 # dets = self.detector.detect(frame,self.current_roi)
                 if self.state == FishingState.FISHING:
-                    dets = self.detector.detect(frame, classes=[1,2,3,4,5])
+                    dets = self.detector.detect(frame,roi=self.current_roi,classes=self.current_classes)
                 else:
                     dets = self.detector.detect(frame)
             t2 = time.time()
@@ -359,21 +418,32 @@ class Fisher:
                     
             elif self.state == FishingState.FISHING:
                 # ================== 动态调整ROI ==================
-                # if game_area:
-                #     game_area_box, _ = game_area
-                #     gx1, gy1, gx2, gy2 = game_area_box
-                #     add_per = 0.2 / 2
-                #     margin_w = (gx2 - gx1) * add_per
-                #     margin_h = (gy2 - gy1) * add_per
-                #     left = int(max(0, gx1 - margin_w))
-                #     top = int(max(0, gy1 - margin_h))
+                logger.debug(f'currentROI_befor:{self.current_roi}, game_area:{game_area}')
+                if self.current_roi is None and game_area is not None:
+                    game_area_box, _ = game_area
+                    gx1, gy1, gx2, gy2 = game_area_box
+                    add_per = 0.2 / 2
+                    margin_w = (gx2 - gx1) * add_per
+                    margin_h = (gy2 - gy1) * add_per
+                    left = int(max(0, gx1 - margin_w))
+                    top = int(max(0, gy1 - margin_h))
                     
-                #     right = int(min(gx2 + margin_w, self.screen_width))
-                #     bottom = int(min(gy2 + margin_h, self.screen_height))
-                #     width = right - left
-                #     height = bottom - top
-                #     self.current_roi = (left, top, width, height)
-                
+                    right = int(min(gx2 + margin_w, self.screen_width))
+                    bottom = int(min(gy2 + margin_h, self.screen_height))
+                    width = right - left
+                    height = bottom - top
+                    self.current_roi = (left, top, width, height)
+                    self.roi_change_time = state_machine_start_time
+                    self.grabber.set_roi(self.current_roi)
+                    self.current_classes = [1,2,3,4,5]
+                    logger.debug(f'currentROI_after{self.current_roi}')
+                if self.current_roi is not None\
+                    and (fish is None or totalbar is None or targetbar is None)\
+                    and state_machine_start_time - self.roi_change_time > 0.15:
+                    self.current_roi = None
+                    self.grabber.set_roi(None)
+                    self.current_classes = None
+                    
                 if fish and state_machine_start_time - self.state_start_time >= 0.88:
                     if self.fish_color is None or self.fish_color == FishColor.UNKNOWN:
                         self.update_fish_color(frame,fish[0])
@@ -388,8 +458,11 @@ class Fisher:
                     tmp_p_y = progressbary2 - progressbary1
                     tmp_pi_cen = (progressbar_indicatory2 + progressbar_indicatory1) / 2
                     if tmp_pi_y / tmp_p_y <= 1 / 6:
-                        self.fish_progress = (progressbary2 - tmp_pi_cen) / tmp_p_y
+                        self.fish_progress = self.fish_progress * 0.5+ ((progressbary2 - tmp_pi_cen) / tmp_p_y) * 0.5
                         # lines.append(f"钓鱼进度:{self.fish_progress:.2%}")
+                    else:
+                        # 如果大于1/6说明进度条没有全部显示出来或者识别错误
+                        pass
 
                 # ================== 关键检测缺失处理（保留） ==================
                 if not (targetbar and fish and totalbar):
@@ -405,6 +478,7 @@ class Fisher:
                             self.change_state(FishingState.FINISH)
                             self.fish_finish_wait_time = -1
                             self.current_roi = None
+                            self.roi_change_time = temp_time_1
                             # print(f"钓鱼结束：{self.fish_is_success}")
                     elif temp_empty_count >= 3:
                         # lines.append("移动视角保持UI完全露出！")
@@ -434,6 +508,11 @@ class Fisher:
                     fx1, fy1, fx2, fy2 = f_box
                     tx1, ty1, tx2, ty2 = target_box
                     ttx1, tty1, ttx2, tty2 = total_box
+
+                    fc_norm = ((fy2+fy1)/2-tty1)/(tty2-tty1) * 1000
+                    tc_norm = ((ty2+ty1)/2-tty1)/(tty2-tty1) * 1000
+
+
                     h_pix_tr = self.screen_height/1440
                     w_pix_tr = self.screen_width/2560
                     fx1 = fx1 * w_pix_tr
@@ -849,12 +928,16 @@ class Fisher:
         # self.full_grabber.release()
         # del self.full_grabber
     
+    def restart(self):
+        self.mouse.release()
+        self.stop()
+        self.run(self.stop_event)
+
     def set_mouse_enable(self,is_enbale):
         self.set_mouse_enable = is_enbale
 
     def set_mouse_move(self,move_list=None):
-        self.mouse_move_list  = move_list
-        
+        self.mouse_move_list  = move_list 
 
     def save_statistics(self,statistics, path=config.STATISTICS_PATH):
         global logger
@@ -872,4 +955,34 @@ class Fisher:
             self.statistics = json.load(f)
             logger.info('json read success')
 
+    def detect_active_dxcam_device(self):
+        try:
+            outputs = dxcam.output_info()
+        except Exception as e:
+            logger.error(f"detect_active_dxcam_device(): dxcam.output_info() raised exception: {e}", exc_info=True)
+            logger.warning("detect_active_dxcam_device(): fallback to default (0, 0)")
+            return 0, 0
 
+        logger.info(f"detect_active_dxcam_device(): raw dxcam outputs:\n{outputs}")
+        pattern = re.compile(r'Device\[(\d+)\]\s+Output\[(\d+)\]:.*?Primary:(True|False)')
+
+        results = ()
+        for line in outputs.splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            logger.info(f"detect_active_dxcam_device(): parsing line: {line}")
+            match = pattern.search(line)
+            if match:
+                device = int(match.group(1))
+                output = int(match.group(2))
+                primary = match.group(3) == 'True'
+                logger.info(f"detect_active_dxcam_device(): parsed device={device}, output={output}, primary={primary}")
+                if primary:
+                    results = (device, output)
+                    logger.info(f"detect_active_dxcam_device(): found primary output -> device={device}, output={output}")
+        if not results:
+            logger.warning("detect_active_dxcam_device(): no primary output found in dxcam.output_info(), fallback to (0, 0)")
+            return 0, 0
+        logger.info(f"detect_active_dxcam_device(): final result={results}")
+        return results
