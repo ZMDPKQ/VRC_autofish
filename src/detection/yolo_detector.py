@@ -1,5 +1,5 @@
-from ultralytics import YOLO
 import torch
+from ultralytics import YOLO
 import config
 import logging
 
@@ -11,8 +11,8 @@ class YOLODetector:
                  roi_model_path=config.ROI_MODEL_PATH,
                  conf_threshold=config.CONFIDENCE_THRESHOLD):
 
-        # self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.device = "cpu"
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        # self.device = "cpu"
         # logger.info(f"yolo 运行在: {self.device}")
 
         self.base_model = YOLO(model_path)
@@ -28,7 +28,7 @@ class YOLODetector:
         self.using_model = None
 
     def detect(self, frame, roi=None,classes=None):
-
+        
         # 如果传入 ROI，说明在局部模式
         if roi is not None:
             model = self.roi_model
@@ -38,7 +38,7 @@ class YOLODetector:
             model = self.base_model
             imgsz = 960
             self.using_model = 'base_model'
-
+        logger.debug(f'using_model:{self.using_model}')
         results = model(
             frame,
             conf=self.conf_threshold,

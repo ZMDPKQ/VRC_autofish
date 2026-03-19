@@ -96,9 +96,9 @@ class MouseController:
             logger.error(f"Error on move_relative_smooth:{e}")
         return True
     
-    def move_LR(self):
-        self.move_relative_smooth(-16, 0, steps=16, delay=0.01)
-        self.move_relative_smooth(16, 0, steps=16, delay=0.01)
+    def move_LR(self,pix):
+        self.move_relative_smooth(-pix, 0, steps=16, delay=0.01)
+        self.move_relative_smooth(pix, 0, steps=16, delay=0.01)
     
     def move_by_list(self,move_list):
         '''

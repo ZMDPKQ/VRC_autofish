@@ -1,28 +1,34 @@
 # main.py
+import torch
 from logging.handlers import RotatingFileHandler
+import re
 import threading
 import time
 import sys
 import os
 from utils.hotkey import HotkeyManager
-from core.fisher import Fisher
 import config
 import tkinter as tk
 import logging
-
+import dxcam
 from utils.screenshot import ScreenGrabber
-from detection.yolo_detector import YOLODetector
 from ui.overlay_win32 import Overlay
+from ui.settings import SettingsTk
 
-import torch
+from detection.yolo_detector import YOLODetector
+from core.fisher import Fisher
+# from utils.re_ui import 
+
+
 torch.backends.cudnn.benchmark = True
+    
 
 
 # print("Start module load:", time.time())
 
 # 配置根日志记录器
 logging.basicConfig(
-    level=logging.DEBUG,                # 全局日志级别（DEBUG, INFO, WARNING, ERROR, CRITICAL）
+    level=logging.INFO,                # 全局日志级别（DEBUG, INFO, WARNING, ERROR, CRITICAL）
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',  # 日志格式
     datefmt='%Y-%m-%d %H:%M:%S',        # 时间格式
     handlers=[
@@ -30,7 +36,7 @@ logging.basicConfig(
         # logging.FileHandler('QwQ.log') # 可选：输出到文件
         RotatingFileHandler('QwQ.log', maxBytes=1024*1024*20, backupCount=3)
     ],
-    encoding='utf-8'
+    encoding='gbk'
 )
 
 
@@ -66,22 +72,47 @@ exit_event = threading.Event()
 
 
 # 初始化各模块
-grabber = ScreenGrabber()  # 全屏截图
-# print("After ScreenGrabber:", time.time())
+grabber = ScreenGrabber()
 detector = YOLODetector()
-# print("After YOLODetector:", time.time())
 overlay = Overlay()
-# print("After Overlay:", time.time())
-fisher = Fisher(overlay=overlay)  # 如需要ROI，可先选择
-# print("After Fisher:", time.time())
-
+settings_ui = None
 hm = HotkeyManager(start_key=config.HOTKEY_START, stop_key=config.HOTKEY_STOP,pause_key=config.HOTKEY_PAUSE)
-# print("After HotkeyManager:", time.time())
+
+def detect_active_dxcam_device():
+        try:
+            outputs = dxcam.output_info()
+        except Exception as e:
+            logger.error(f"detect_active_dxcam_device(): dxcam.output_info() raised exception: {e}", exc_info=True)
+            logger.warning("detect_active_dxcam_device(): fallback to default (0, 0)")
+            return 0, 0
+
+        logger.info(f"detect_active_dxcam_device(): raw dxcam outputs:\n{outputs}")
+        pattern = re.compile(r'Device\[(\d+)\]\s+Output\[(\d+)\]:.*?Primary:(True|False)')
+
+        results = ()
+        for line in outputs.splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            logger.info(f"detect_active_dxcam_device(): parsing line: {line}")
+            match = pattern.search(line)
+            if match:
+                device = int(match.group(1))
+                output = int(match.group(2))
+                primary = match.group(3) == 'True'
+                logger.info(f"detect_active_dxcam_device(): parsed device={device}, output={output}, primary={primary}")
+                if primary:
+                    results = (device, output)
+                    logger.info(f"detect_active_dxcam_device(): found primary output -> device={device}, output={output}")
+        if not results:
+            logger.warning("detect_active_dxcam_device(): no primary output found in dxcam.output_info(), fallback to (0, 0)")
+            return 0, 0
+        logger.info(f"detect_active_dxcam_device(): final result={results}")
+        return results
 
 def debug_loop():
     global  exit_event
     overlay.start()
-
 
 def start_debug():
     global debug_thread
@@ -128,7 +159,7 @@ def stop_fishing():
         logger.error(f"stop_fishing(): fisher.stop() raised exception: {e}", exc_info=True)
 
 def start_fishing_state_change():
-    global start_fishing_state
+    global start_fishing_state,settings_ui
     if not start_fishing_state:
         logger.info("start_fishing_state_change(): switching to START state, will call start_fishing()")
         start_fishing_state = True
@@ -137,8 +168,9 @@ def start_fishing_state_change():
         logger.info("start_fishing_state_change(): switching to STOP state, will call stop_fishing()")
         start_fishing_state = False
         stop_fishing()
-        # edit_config()
-
+        # 这里只能通知主线程显示窗口，不能在热键线程里直接 mainloop
+        # settings_ui.show()
+        edit_config()
 
 def pause_fishing_state_change():
     global pause_fishing_state,fisher
@@ -152,18 +184,17 @@ def pause_fishing_state_change():
         pause_fishing_state = True
     fisher.set_mouse_enable(pause_fishing_state)
 
-
 def edit_config():
     # 配置文件路径（与脚本同级）
     config_path = os.path.join(os.path.dirname(sys.argv[0]), 'config.py')
-    vars_list = ['FISH_PID_CONTROL_KP',
-        'FISH_PID_CONTROL_KD',
-        'FISH_PID_CONTROL_KF',
-        'FISH_PID_CONTROL_MAX_KD',
-        'FISH_PID_CONTROL_THRESHOLD',
-        'FISH_PID_CONTROL_DEAD_ZONE',
-        'FISH_PID_CONTROL_FORCE_THRESHOLD',
-        'FISH_PID_CONTROL_MIN_SWITCH_INTERVAL']
+    vars_list = [
+        ('TIME_FORG_HARVEST','收青蛙间隔: 小时每次'),
+        ('MAX_WAIT_EXCLAMATIONE_TIME','抛竿后等待感叹号出现的时间: 秒'),
+        ('ROI_ENABLE_THRESHOLD_FRAME','启用ROI的最低帧数: 帧'),
+        ('CAST_LR_PIX','抛竿摆头幅度:  像素'),
+        ('CAST_LR_MOVE','抛竿移动时间: 秒')
+
+        ]
     
     # 读取文件并提取当前值
     with open(config_path, 'r', encoding='utf-8') as f:
@@ -171,7 +202,7 @@ def edit_config():
     
     values = {}
     for line in lines:
-        for var in vars_list:
+        for var,_ in vars_list:
             if line.strip().startswith(var):
                 parts = line.split('=', 1)
                 if len(parts) > 1:
@@ -184,11 +215,14 @@ def edit_config():
     
     # 创建窗口
     root = tk.Tk()
-    root.title("修改配置")
+    root.title("QwQ参数修改")
+    root.attributes('-topmost', True)   # 使窗口置顶
+    root.lift()                         # 提升到最前
+    root.focus_force()                  # 强制获得焦点
     entries = {}
     
-    for i, var in enumerate(vars_list):
-        tk.Label(root, text=var).grid(row=i, column=0)
+    for i, (var,prd_text) in enumerate(vars_list):
+        tk.Label(root, text=prd_text).grid(row=i, column=0, sticky='w')
         entry = tk.Entry(root)
         entry.insert(0, values.get(var, ''))
         entry.grid(row=i, column=1)
@@ -197,14 +231,14 @@ def edit_config():
     def save():
         new_lines = []
         for line in lines:
-            for var in vars_list:
+            for (var,_) in vars_list:
                 if line.strip().startswith(var):
                     # 重建该行：保留等号前的部分和注释，仅替换值
                     before_eq = line.split('=', 1)[0] + '='
                     after_eq = line.split('=', 1)[1]
                     if '#' in after_eq:
                         after_val, comment = after_eq.split('#', 1)
-                        comment = '#' + comment
+                        comment = '\t\t\t'+'#' + comment
                     else:
                         after_val = after_eq
                         comment = ''
@@ -218,8 +252,9 @@ def edit_config():
         root.destroy()
     
     # 按钮
-    tk.Button(root, text="保存", command=save).grid(row=len(vars_list), column=0, columnspan=2)
-    tk.Button(root, text="取消", command=root.destroy).grid(row=len(vars_list)+1, column=0, columnspan=2)
+    tk.Button(root, text="保存", command=save).grid(row=len(vars_list), column=0)
+    tk.Button(root, text="取消", command=root.destroy).grid(row=len(vars_list), column=1)
+    
     root.mainloop()
 
 def timing_start():
@@ -237,8 +272,23 @@ def timing_start():
                     break
 
 
+
+
+    
 if __name__ == "__main__":
+    print('main')
     t0 = time.time()
+    # global fisher,hm,exit_event,stop_event,fisher_thread,debug_thread,overlay
+    device_idx,output_idx = detect_active_dxcam_device()
+    try:
+        logger.info("dxcam实例成功")
+        dxcam_camera = dxcam.create(device_idx=device_idx,output_idx=output_idx,output_color='BGR')
+    except Exception as e:
+        logger.error(f"dxcam实例失败: {e}", exc_info=True)
+        logger.warning("DXCAM 在此设备上不可用，本会话将全程使用 MSS 截图")
+    fisher = Fisher(overlay=overlay,dxcam_camera=dxcam_camera)
+    # settings_ui = SettingsTk()
+    
     # print(f"1:{t0:.2f}s")
     start_debug()
     # print(f"2:{time.time()-t0:.2f}s")
@@ -248,9 +298,19 @@ if __name__ == "__main__":
     hm.on_stop = stop_debug
     hm.start_listening()
     # print(f"3:{time.time()-t0:.2f}s")
+    
     try:
         # 保持主线程运行
         while not exit_event.is_set():
+            # 在主线程中处理设置窗口的 GUI 队列，避免在热键线程里直接操作 Tk
+            # if settings_ui is not None:
+            #     try:
+            #         # settings_ui.force_process_queue()
+            #         # 让 Tk 处理重绘/事件，这里不用 mainloop 也能正常刷新
+            #         # settings_ui.root.update_idletasks()
+            #         # settings_ui.root.update()
+            #     except Exception:
+            #         pass
             time.sleep(0.1)
         stop_event.set()
         if fisher_thread and fisher_thread.is_alive():
