@@ -22,6 +22,8 @@ ROI_MODEL_PATH = resource_path(os.path.join('models', 'roi_fish.pt'))
 STATISTICS_PATH = get_runtime_path("statistics.json")
 DEFAULT_REPLAY_PATH = get_runtime_path("defat_replay.json")
 
+FONTPATH = resource_path(os.path.join('assets/fonts', '1.ttf'))
+
 # 检测阈值
 CONFIDENCE_THRESHOLD = 0.6
 PROGRESS_GREEN_LOWER = (40, 40, 40)   # HSV
@@ -53,8 +55,7 @@ ROI_ENABLE_THRESHOLD_FRAME  = 16 			# 启用ROI的帧数阈值
 CLASS_NAMES = ["exclamation", "totalbar", "targetbar", "fish",
                "progressbar", "progressbar_indicator", "game_area","forg"]
 
-# 字体
-FONTPATH = 'src\\assets\\fonts\\ShangShouYingFengShouXieTi-2.ttf'
+
 
 RECAST_WAIT_TIME            = 1         # 重新抛竿间隔时间
 MAX_WAIT_EXCLAMATIONE_TIME  = 30 			# 等待感叹号最大时间（秒）
